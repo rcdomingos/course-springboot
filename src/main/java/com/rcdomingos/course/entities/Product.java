@@ -27,7 +27,7 @@ public class Product implements Serializable {
 	private Double price;
 	private String imgUrl;
 
-	// anotação para relação muitos para muitos e transformar do modo orientado objeto para o modo relacional do banco
+	// anotação para relação muitos para muitos e transformar do paradigma orientado objeto para o paradigma relacional do banco
 	@ManyToMany 
 	@JoinTable(name = "tb_product_category", joinColumns = @JoinColumn(name = "product_id"), inverseJoinColumns = @JoinColumn(name = "category_id"))
 	private Set<Category> categories = new HashSet<>();
