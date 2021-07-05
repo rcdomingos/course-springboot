@@ -17,13 +17,17 @@ public class UserService {
 	@Autowired
 	private UserRepository repository;
 
-	// serviço para passar para o controlador  
-	public List<User> findAll(){
+	// serviço para passar para o controlador
+	public List<User> findAll() {
 		return repository.findAll();
 	}
-	
+
 	public User findById(Long id) {
 		Optional<User> obj = repository.findById(id);
 		return obj.get();
+	}
+
+	public User insert(User obj) {
+		return repository.save(obj);
 	}
 }
